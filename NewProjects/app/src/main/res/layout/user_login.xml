@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="login"
+            type="com.manage.tn.tn_booss.ui.fragment.LoginFragment" />
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        android:paddingLeft="80px">
+
+        <FrameLayout
+            android:id="@+id/fl_QRcode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="34dp"
+           >
+
+            <ImageView
+                android:id="@+id/a_user_image_login"
+                android:layout_width="102dp"
+                android:layout_height="80dp"
+                android:layout_gravity="center"
+                />
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="34dp"
+            android:gravity="center"
+            android:text="微信扫描二维码登录"
+            android:textColor="#999999"
+            android:textSize="16dp" />
+
+
+        <LinearLayout
+            android:id="@+id/ll_user_container"
+            android:layout_width="215dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="登录中心"
+                android:textSize="13dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="15dp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:hint="手机号"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textSize="13dp" />
+
+                <EditText
+                    android:id="@+id/user_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:drawablePadding="10dp"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical|right"
+                    android:hint="请输入手机号"
+                    android:inputType="number"
+                    android:lines="1"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textSize="13dp" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1px"
+                 />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <com.manage.tn.tn_booss.widget.ContDownTextView
+                    android:id="@+id/a_user_time"
+                    android:layout_width="102dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="获取验证码"
+                    android:textColor="@color/white"
+                    android:textSize="13dp"
+                    android:onClick="@{(view)->login.onClick(view)}"
+                    />
+
+                <!--<TextView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:background="@null"-->
+                <!--android:gravity="center_vertical"-->
+                <!--android:hint="验证码"-->
+                <!--android:textColor="@color/a_text_info"-->
+                <!--android:textColorHint="@color/a_text_info"-->
+                <!--android:textSize="36px"/>-->
+
+                <EditText
+                    android:id="@+id/a_user_code"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:drawablePadding="10dp"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical|right"
+                    android:hint="请输入验证码"
+                    android:inputType="number"
+                    android:lines="1"
+                    android:textColor="@color/white"
+                    android:textColorHint="@color/white"
+                    android:textSize="13dp" />
+
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+             />
+
+            <Button
+                android:id="@+id/a_user_login"
+                android:layout_width="102dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="10dp"
+
+                android:gravity="center"
+                android:text="登录"
+                android:textColor="@color/white"
+                android:layout_gravity="center"
+                android:onClick="@{(view)->login.onClick(view)}"
+                android:textSize="13dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/ll_user_container"
+            android:layout_alignRight="@id/ll_user_container"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            android:gravity="center"
+            android:orientation="horizontal"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="登录代表您已同意"
+                android:textColor="#666666"
+                android:textSize="10dp" />
+
+            <TextView
+                android:id="@+id/tv_blue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="《车联天下用户服务协议》"
+                android:textColor="#37a3d5"
+                android:textSize="10dp" />
+        </LinearLayout>
+    </RelativeLayout>
+</layout>
+
